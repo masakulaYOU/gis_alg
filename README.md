@@ -1,2 +1,6 @@
-# gis_alg
-Common algorithms in GIS
+# GIS算法
+
+一些基础的GIS算法的实现
+
+【目录】
+- [不同实体的构造](./alg/md/%E3%80%90%E6%AF%8F%E6%97%A5GIS%E7%AE%97%E6%B3%95%E3%80%91%EF%BC%880%EF%BC%89%E4%B8%8D%E5%90%8C%E5%AE%9E%E4%BD%93%E7%9A%84%E6%9E%84%E9%80%A0.md)
