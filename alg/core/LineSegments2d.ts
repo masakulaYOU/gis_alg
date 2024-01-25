@@ -10,4 +10,6 @@ class LineSegments2d extends LineSegments<Vector2d, LineSegment2d> {
       this._segments.push(new LineSegment2d(start, end));
     }
   }
+
+  
 }
