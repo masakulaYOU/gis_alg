@@ -123,6 +123,10 @@ class Vector2d {
     return this;
   }
 
+  distanceTo(v: Vector2d) : number {
+    return Math.sqrt(Math.pow(v.x - this.x, 2) + Math.pow(v.y - this.y, 2));
+  }
+
   static isZeroVector(v: Vector2d): boolean {
     return v.x == 0 && v.y === 0;
   }

@@ -192,54 +192,40 @@ class Polygon3d extends Polygon<Vector3d> {
 
 # 矩形
 
-矩形可以看作一个特殊的多边形，这个多边形只有四个点。我们按照左上、右上、右下、左下的顺序将这四个点存储起来即可。二三维矩形除了顶点类型不一样，其他都是一样的。
-
+对于一个二维的矩形，我们只需要记录其上下左右边距离原点的距离即可，可以自动计算出四个点的坐标。
 ```typescript
 // Rectangle2d.ts
-class Rectangle2d extends Polygon2d {
-  private _leftUp: Vector2d;
-  private _rightUp: Vector2d;
-  private _leftBottom: Vector2d;
-  private _rightBottom: Vector2d;
+class Rectangle2d {
+  
+  private _left: number;
+  private _right: number;
+  private _top: number;
+  private _bottom: number;
 
-  constructor(leftUp: Vector2d, rightUp: Vector2d, leftBottom: Vector2d, rightBottom: Vector2d) {
-    super([leftUp, rightUp, rightBottom, leftBottom]);
-    this._leftUp = leftUp;
-    this._rightUp = rightUp;
-    this._leftBottom = leftBottom;
-    this._rightBottom = rightBottom;
+  constructor(left: number, right: number, top: number, bottom: number) {
+    this._left = left;
+    this._right = right;
+    this._top = top;
+    this._bottom = bottom;
   }
 
-  public get leftUp(): Vector2d { return this._leftUp; }
-  public get rightUp(): Vector2d { return this._rightUp; }
-  public get leftBottom(): Vector2d { return this._leftBottom; }
-  public get rightBottom(): Vector2d { return this._rightBottom; }
-}
-```
-
-```typescript
-// Rectangle3d.ts
-class Rectangle3d extends Polygon3d {
-  private _leftUp: Vector3d;
-  private _rightUp: Vector3d;
-  private _leftBottom: Vector3d;
-  private _rightBottom: Vector3d;
-
-  constructor(leftUp: Vector3d, rightUp: Vector3d, leftBottom: Vector3d, rightBottom: Vector3d) {
-    super([leftUp, rightUp, rightBottom, leftBottom]);
-    this._leftUp = leftUp;
-    this._rightUp = rightUp;
-    this._leftBottom = leftBottom;
-    this._rightBottom = rightBottom;
+  get left() {
+    return this._left;
   }
 
-  public get leftUp(): Vector3d { return this._leftUp; }
-  public get rightUp(): Vector3d { return this._rightUp; }
-  public get leftBottom(): Vector3d { return this._leftBottom; }
-  public get rightBottom(): Vector3d { return this._rightBottom; }
+  get right() {
+    return this._right;
+  }
+
+  get top() {
+    return this._top;
+  }
+
+  get bottom() {
+    return this._bottom;
+  }
 }
 ```
-
 # 圆和球
 
 圆和球都是由一个圆心（球心）和一个半径组成的。
